@@ -26,9 +26,9 @@ function App() {
   }
 
   // Example use of alias when destructuring a returning object, so we are renaming the fetchData as userPLaces
- const {fetchedData: userPlaces, isFetching, error} = useFetch(fetchUserPlaces, []);
+ const {fetchedData: userPlaces, isFetching, error, setData: setUserPlaces} = useFetch(fetchUserPlaces, []);
 
-  /*async function handleSelectPlace(selectedPlace) {
+  async function handleSelectPlace(selectedPlace) {
     // await updateUserPlaces([selectedPlace, ...userPlaces]);
 
     setUserPlaces((prevPickedPlaces) => {
@@ -72,8 +72,8 @@ function App() {
 
       setModalIsOpen(false);
     },
-    [userPlaces]
-  );*/
+    [userPlaces, setUserPlaces]// Now we need to pass the set state method as dependency, since it's defined from an external function and it has no guarantee of not being changed
+  );
 
   function handleError() {
     setErrorUpdatingPlaces(null);
@@ -94,7 +94,7 @@ function App() {
       <Modal open={modalIsOpen} onClose={handleStopRemovePlace}>
         <DeleteConfirmation
           onCancel={handleStopRemovePlace}
-          //onConfirm={handleRemovePlace}
+          onConfirm={handleRemovePlace}
         />
       </Modal>
 
@@ -119,7 +119,7 @@ function App() {
           />
         )}
 
-        <AvailablePlaces /*onSelectPlace={handleSelectPlace}*/ />
+        <AvailablePlaces onSelectPlace={handleSelectPlace} />
       </main>
     </>
   );

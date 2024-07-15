@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export function useFetch(fetchFn, dataInitialValue) {
     // Note that the state declared in a custom hook, is treaten as usual component states for components that import and use this hook
     // So when this states get updated, such components will get re-executed
-    const [fetchedData, setUserPlaces] = useState(dataInitialValue); // We initiate the initial value as argument in order to make this hook more configurable
+    const [fetchedData, setData] = useState(dataInitialValue); // We initiate the initial value as argument in order to make this hook more configurable
     const [isFetching, setIsFetching] = useState();
     const [error, setError] = useState();
 
@@ -15,7 +15,7 @@ export function useFetch(fetchFn, dataInitialValue) {
           setIsFetching(true);
           try {
             const data = await fetchFn();
-            setUserPlaces(data);
+            setData(data);
           } catch (error) {
             setError({ message: error.message || 'Failed to fetch data' });
           }
@@ -30,6 +30,7 @@ export function useFetch(fetchFn, dataInitialValue) {
       return {
         fetchedData,
         isFetching,
-        error
+        error,
+        setData
       };
 }
