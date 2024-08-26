@@ -2,6 +2,7 @@
 
 <h2>This demo project includes the following React concepts</h1>
 <ul>
+    <li>Custom Hooks - useFetch is a custom hook which makes use of useState and useEffect inside to fetch user places</li>
     <li><b>useRef</b> - For handling the reference of the place when it´s picked from the user's and available places to be removed</li>
     <li><b>useState</b> - For state management of state variables</li>
     <li><b>useEffect</b> - For async function execution such as fetch places from backend server. Also to execute the showModal or close dialog methods</li>
