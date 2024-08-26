@@ -7,3 +7,5 @@
     <li>dialog <b>onCancel</b> attribute - set this attribute to avoid a bug when closing the modal with ESC key and keep the UI synced with the state</li>
     <li>Use of <b>fech</b> method - http communication</li>
 </ul>
+
+![alt text](https://github.com/[eduardo-c]/[place-picker]/blob/[master]/logo.png?raw=true)
