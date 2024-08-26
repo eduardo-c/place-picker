@@ -1,4 +1,4 @@
-This demo project includes the following concepts:
+<h1>This demo project includes the following React concepts:</h1>
 - useRef: For handling the reference of the place when it´s picked from the user's and available places to be removed
 - useState: For state management of state variables
 - useEffect: For async function execution such as fetch places from backend server. Also to execute the showModal or close dialog methods
