@@ -8,4 +8,4 @@
     <li>Use of <b>fech</b> method - http communication</li>
 </ul>
 
-![alt text](https://github.com/[eduardo-c]/[place-picker]/blob/[main]/public/logo.png?raw=true)
+![alt text](https://github.com/eduardo-c/place-picker/blob/main/logo.png?raw=true)
